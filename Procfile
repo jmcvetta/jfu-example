@@ -1,1 +1,1 @@
-web: example
+web: bin/jfu-example

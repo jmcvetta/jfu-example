@@ -43,7 +43,7 @@ func main() {
 	// Initialize MongoDB
 	//
 	mongoUri := os.Getenv("MONGOLAB_URI")
-	dbName := "photoshare" // If no DB name specified, use "photoshare"
+	dbName := "jfuexample" // If no DB name specified, use "jfuexample"
 	if mongoUri != "" {
 		switch _, auth, _, err := mgourl.ParseURL(mongoUri); true {
 		case err != nil:

@@ -1,20 +1,27 @@
 <!DOCTYPE HTML>
 <!--
 /*
- * jQuery File Upload Plugin Demo 6.9
+ * Copyright (c) 2012 Jason McVetta.  This is Free Software, released under the
+ * terms of the WTFPL v2.  It comes without any warranty, express or implied.
+ * See http://sam.zoy.org/wtfpl/COPYING for more details.
+ * 
+ *
+ * Derived from: 
+ *
+ * jQuery File Upload Plugin Example
  * https://github.com/blueimp/jQuery-File-Upload
  *
- * Copyright 2010, Sebastian Tschan
+ * Copyright 2011, Sebastian Tschan
  * https://blueimp.net
  *
- * Licensed under the MIT license:
+ * Original software by Tschan licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>jQuery File Upload Demo</title>
+<title>jfu-example</title>
 <meta name="description" content="File Upload widget with multiple file selection, drag&amp;drop support, progress bar and preview images for jQuery. Supports cross-domain, chunked and resumable file uploads. Works with any server-side platform (Google App Engine, PHP, Python, Ruby on Rails, Java, etc.) that supports standard HTML form file uploads.">
 <meta name="viewport" content="width=device-width">
 <!-- Bootstrap CSS Toolkit styles -->
@@ -41,16 +48,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="https://github.com/blueimp/jQuery-File-Upload">jQuery File Upload</a>
+            <a class="brand" href="https://github.com/jmcvetta/jfu-example">jfu-example</a>
             <div class="nav-collapse">
                 <ul class="nav">
                     <li class="active"><a href="#">Demo</a></li>
-                    <li><a href="https://github.com/blueimp/jQuery-File-Upload/downloads">Downloads</a></li>
-                    <li><a href="https://github.com/blueimp/jQuery-File-Upload">Source Code</a></li>
-                    <li><a href="https://github.com/blueimp/jQuery-File-Upload/wiki">Documentation</a></li>
-                    <li><a href="https://github.com/blueimp/jQuery-File-Upload/issues">Issues</a></li>
-                    <li><a href="test/">Test</a></li>
-                    <li><a href="https://blueimp.net">&copy; Sebastian Tschan</a></li>
+                    <li><a href="https://github.com/blueimp/jQuery-File-Upload">jQuery File Upload Plugin</a></li>
+                    <li><a href="https://github.com/jmcvetta/jfu">jfu Library</a></li>
+                    <li><a href="https://github.com/jmcvetta">&copy; Jason McVetta</a></li>
                 </ul>
             </div>
         </div>
@@ -58,12 +62,16 @@
 </div>
 <div class="container">
     <div class="page-header">
-        <h1>jQuery File Upload Demo</h1>
+		<h1>jfu - Go backend library for jQuery File Upload plugin
     </div>
     <blockquote>
-        <p>File Upload widget with multiple file selection, drag&amp;drop support, progress bars and preview images for jQuery.<br>
-        Supports cross-domain, chunked and resumable file uploads and client-side image resizing.<br>
-        Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.</p>
+		<p>This app demonstrates the <a href="https://github.com/jmcvetta/jfu">jfu</a> 
+		library for easy server-side support of jQuery File Upload Plugin in 
+		<a href="http://golang.org">Go</a> applications.<br><br>
+		Plugin provides file upload widget with multiple file selection,
+		drag &amp; drop support, progress bars and preview images for jQuery.<br>
+		Supports cross-domain, chunked and resumable file uploads and
+		client-side image resizing.<br><br>
     </blockquote>
     <br>
     <!-- The file upload form used as target for the file upload widget -->
@@ -111,7 +119,7 @@
     <div class="well">
         <h3>Demo Notes</h3>
         <ul>
-            <li>The maximum file size for uploads in this demo is <strong>5 MB</strong> (default file size is unlimited).</li>
+            <li>The maximum file size for uploads in this demo is <strong>100kB</strong> (default file size is unlimited).</li>
             <li>Only image files (<strong>JPG, GIF, PNG</strong>) are allowed in this demo (by default there is no file type restriction).</li>
             <li>Uploaded files will be deleted automatically after <strong>5 minutes</strong> (demo setting).</li>
             <li>You can <strong>drag &amp; drop</strong> files from your desktop on this webpage with Google Chrome, Mozilla Firefox and Apple Safari.</li>

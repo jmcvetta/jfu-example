@@ -29,18 +29,23 @@ import (
 	"path/filepath"
 )
 
-var (
-	pathRoot  = os.Getenv("PWD")                // Root of the application install
-	pathHtml  = filepath.Join(pathRoot, "html") // HTML documents
-	mcServers = os.Getenv("MEMCACHIER_SERVERS")
-	mcUser    = os.Getenv("MEMCACHIER_USERNAME")
-	mcPasswd  = os.Getenv("MEMCACHIER_PASSWORD")
-)
-
 func main() {
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	//
-	// Initialize MongoDB
+	// Setup environment from Heroku
+	//
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "5000"
+		}
+	//
+	//
+	pathRoot  := os.Getenv("PWD")                // Root of the application install
+	//
+	mcServers := os.Getenv("MEMCACHIER_SERVERS")
+	mcUser    := os.Getenv("MEMCACHIER_USERNAME")
+	mcPasswd  := os.Getenv("MEMCACHIER_PASSWORD")
+	//
 	//
 	mongoUri := os.Getenv("MONGOLAB_URI")
 	dbName := "jfuexample" // If no DB name specified, use "jfuexample"
@@ -104,10 +109,6 @@ func main() {
 	//
 	// Start the webserver
 	//
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "5000"
-		}
 	addr := "0.0.0.0:" + port
 	log.Println("Starting webserver on", addr, "...")
 	log.Fatal(http.ListenAndServe(addr, nil))

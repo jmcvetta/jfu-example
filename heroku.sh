@@ -6,13 +6,14 @@
 [ -e "`which heroku`" ] || (
 	echo "Could not find Heroku toolbelt."
 	echo "See https://toolbelt.heroku.com/ for installation instructions."
-); exit 1
+	exit 1
+); 
 
 set -x
 
 heroku create --buildpack git://github.com/kr/heroku-buildpack-go.git
-heroku addons:add mongolab:starter
-heroku addons:add memcachier:25
+heroku addons:add mongolab:sandbox
+heroku addons:add memcachier:dev
 
 time git push heroku master
 
